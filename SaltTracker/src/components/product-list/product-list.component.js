@@ -6,13 +6,12 @@ import styles from "./product-list.style"
 export default class ProductList extends Component {
 
   constructor(props) {
-    super();
+    super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.props = props;
-    console.log('hey!');
-    console.log(props);
+    const { params } = this.props.navigation.state;
+    
     this.state = {
-      dataSource: ds.cloneWithRows(props.dao.getProducts()),
+      dataSource: ds.cloneWithRows(params.dao.getProducts()),
     };
   }
 

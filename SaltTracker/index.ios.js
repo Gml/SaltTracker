@@ -25,17 +25,12 @@ class HomeScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <Chart maxIntake="6" currentIntake="6"></Chart>
+          <Chart maxIntake="6" currentIntake="2"></Chart>
         </View>
         <Button
-          onPress={() => navigate('ProductList', {dao: ProductDao })}
-          title="Tomaat"
-        />
-
-
-        {/*<View style={styles.container}>
-          <ProductList aap="joehoe" aapjes={aapjes} dao={ProductDao}></ProductList>
-        </View>*/}
+          onPress={() => navigate('ProductList', { dao: ProductDao })}
+          title="Voeg toe"
+        />        
       </View>
     );
   }
@@ -56,4 +51,5 @@ const styles = StyleSheet.create({
   }
 });
 
+// AppRegistry.registerComponent('SaltTracker', () => SaltTracker);
 AppRegistry.registerComponent('SaltTracker', () => SaltTracker);
