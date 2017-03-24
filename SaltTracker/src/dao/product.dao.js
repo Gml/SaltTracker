@@ -9,4 +9,8 @@ export default class ProductDao {
   static getProducts() {
     return this.products;
   }
+
+  static addProduct(product) {
+    return this.products.push(product);
+  }
 }

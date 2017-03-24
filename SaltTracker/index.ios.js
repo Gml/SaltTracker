@@ -17,7 +17,7 @@ import {
 import Chart from './src/components/chart/chart.component';
 import ProductList from './src/components/product-list/product-list.component';
 import Consumption from './src/components/consumption/consumption.component';
-import Product from './src/components/product/product.component';
+import AddProduct from './src/components/add-product/add-product.component';
 import ProductDao from './src/dao/product.dao';
 
 class HomeScreen extends Component {
@@ -41,7 +41,8 @@ class HomeScreen extends Component {
 const SaltTracker = StackNavigator({
   Home: { screen: HomeScreen },
   ProductList: {screen: ProductList},
-  Consumption: {screen: Consumption}
+  Consumption: {screen: Consumption},
+  AddProduct: {screen: AddProduct}
 });
 
 const styles = StyleSheet.create({

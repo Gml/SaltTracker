@@ -18,7 +18,7 @@ export default class ProductList extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     const { params } = this.props.navigation.state;
-    
+
     this.state = {
       dataSource: ds.cloneWithRows(params.dao.getProducts()),
     };
@@ -40,6 +40,10 @@ export default class ProductList extends Component {
               </View>
             </TouchableHighlight>
           }
+        />
+
+        <Button title="Voeg toe"
+                onPress={() => navigate('AddProduct')}
         />
       </View>
     )
