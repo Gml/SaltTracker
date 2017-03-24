@@ -4,6 +4,8 @@ import {BlurView, VibrancyView} from "react-native-blur"
 import ProductDao from "../../dao/product.dao";
 import Product from "../../models/product.model";
 
+import styles from "./add-product.style";
+
 export default class AddProduct extends Component {
 
   constructor(props) {
@@ -11,7 +13,7 @@ export default class AddProduct extends Component {
   }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const {navigate} = this.props.navigation;
 
     return (
       <Image style={styles.image}
@@ -45,30 +47,3 @@ export default class AddProduct extends Component {
 }
 
 AppRegistry.registerComponent('AddProduct', () => AddProduct);
-
-const styles = StyleSheet.create({
-  image: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'cover',
-    padding: 10
-  },
-  container: {
-    padding: 10,
-    borderRadius: 8
-  },
-  title: {
-    height: 40,
-    // borderColor: '#007aff',
-    borderColor: '#303030',
-    borderWidth: 1,
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginBottom: 10
-  },
-  titleLabel: {
-    fontSize: 16,
-    backgroundColor: 'transparent'
-  }
-});

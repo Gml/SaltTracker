@@ -16,9 +16,10 @@ import {
 
 import Chart from './src/components/chart/chart.component';
 import ProductList from './src/components/product-list/product-list.component';
-import Consumption from './src/components/consumption/consumption.component';
+import AddConsumption from './src/components/add-consumption/add-consumption.component';
 import AddProduct from './src/components/add-product/add-product.component';
 import ProductDao from './src/dao/product.dao';
+import ConsumptionDao from "./src/dao/consumption.dao";
 
 class HomeScreen extends Component {
   render() {
@@ -27,7 +28,7 @@ class HomeScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <Chart maxIntake="6" currentIntake="2"></Chart>
+          <Chart maxIntake="6" currentIntake="2" dao={ConsumptionDao}></Chart>
         </View>
         <Button
           onPress={() => navigate('ProductList', { dao: ProductDao })}
@@ -41,7 +42,7 @@ class HomeScreen extends Component {
 const SaltTracker = StackNavigator({
   Home: { screen: HomeScreen },
   ProductList: {screen: ProductList},
-  Consumption: {screen: Consumption},
+  AddConsumption: {screen: AddConsumption},
   AddProduct: {screen: AddProduct}
 });
 

@@ -32,7 +32,7 @@ export default class ProductList extends Component {
         <ListView style={{alignSelf: 'stretch'}}
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
-            <TouchableHighlight onPress={() => navigate('Consumption', {image: rowData.imageUri})}>
+            <TouchableHighlight onPress={() => navigate('AddConsumption', {...rowData})}>
               <View style={styles.row} >
                 <Image style={styles.image} source={{uri: rowData.imageUri}}/>
                 <Text style={styles.title}>{rowData.title}</Text>
