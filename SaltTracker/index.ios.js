@@ -13,12 +13,21 @@ import {
 } from 'react-native';
 
 import Chart from './src/components/chart/chart.component'
+import ProductList from './src/components/product-list/product-list.component'
+import ProductDao from './src/dao/product.dao'
+
+aapjes = ['henk', 'piet', 'jan'];
 
 export default class SaltTracker extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Chart maxIntake="6" currentIntake="6"></Chart>
+        {/*<View style={styles.container}>*/}
+          {/*<Chart maxIntake="6" currentIntake="6"></Chart>*/}
+        {/*</View>*/}
+        <View style={styles.container}>
+          <ProductList aap="joehoe" aapjes={aapjes} dao={ProductDao}></ProductList>
+        </View>
       </View>
     );
   }
