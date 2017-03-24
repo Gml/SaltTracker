@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import {AppRegistry, View, ListView, Text, StyleSheet} from "react-native";
+import {AppRegistry, View, ListView, Text, Image, StyleSheet} from "react-native";
+
+import styles from "./product-list.style"
 
 export default class ProductList extends Component {
 
@@ -16,14 +18,12 @@ export default class ProductList extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, padding: 50, alignItems: 'center'}}>
-        <Text style={styles.purple}>{this.props.aap}</Text>
-
-        <ListView
+      <View style={styles.wrapper}>
+        <ListView style={{alignSelf: 'stretch'}}
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
             <View style={styles.row}>
-              <Text style={styles.image}>{rowData.picture}</Text>
+              <Image style={styles.image} source={{uri: rowData.imageUri}}/>
               <Text style={styles.title}>{rowData.title}</Text>
               <Text style={styles.salt}>{rowData.saltUnitsPer100Grams}</Text>
             </View>
@@ -33,27 +33,5 @@ export default class ProductList extends Component {
     )
   }
 }
-
-// https://coolors.co/413c58-a3c4bc-bfd7b5-e7efc5-f2e7c9
-
-const styles = StyleSheet.create({
-  row: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#413C58',
-    padding: 5,
-    margin: 1
-  },
-  image: {
-    flex: 1,
-    width: 50
-  },
-  title: {
-    flex: 1,
-  },
-  salt: {
-    flex: 1,
-  }
-});
 
 AppRegistry.registerComponent('ProductList', () => ProductList);
