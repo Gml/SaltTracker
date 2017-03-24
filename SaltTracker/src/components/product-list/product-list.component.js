@@ -15,7 +15,7 @@ export default class ProductList extends Component {
     };
   }
 
-  render() {
+  render() {    
     return (
       <View style={styles.wrapper}>
         <ListView style={{alignSelf: 'stretch'}}

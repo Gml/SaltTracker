@@ -14,9 +14,11 @@ import {
   Button
 } from 'react-native';
 
-import Chart from './src/components/chart/chart.component'
-import ProductList from './src/components/product-list/product-list.component'
-import ProductDao from './src/dao/product.dao'
+import Chart from './src/components/chart/chart.component';
+import ProductList from './src/components/product-list/product-list.component';
+import Consumption from './src/components/consumption/consumption.component';
+import Product from './src/components/product/product.component';
+import ProductDao from './src/dao/product.dao';
 
 class HomeScreen extends Component {
   render() {
@@ -30,6 +32,7 @@ class HomeScreen extends Component {
         <Button
           onPress={() => navigate('ProductList', { dao: ProductDao })}
           title="Voeg toe"
+          style={styles.button}
         />        
       </View>
     );
@@ -38,7 +41,8 @@ class HomeScreen extends Component {
 
 const SaltTracker = StackNavigator({
   Home: { screen: HomeScreen },
-  ProductList: {screen: ProductList}  
+  ProductList: {screen: ProductList}
+  // Consumption: {screen: Consumption}  
 });
 
 const styles = StyleSheet.create({
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#303030',
     alignSelf: 'stretch'
-  }
+  }  
 });
 
 // AppRegistry.registerComponent('SaltTracker', () => SaltTracker);
