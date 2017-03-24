@@ -12,24 +12,13 @@ import {
   View
 } from 'react-native';
 
-import Chart from './src/chart.component'
+import Chart from './src/components/chart/chart.component'
 
 export default class SaltTracker extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-          Joehoe! Yes
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-        <Chart></Chart>
+        <Chart maxIntake="6" currentIntake="6"></Chart>
       </View>
     );
   }
@@ -41,17 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('SaltTracker', () => SaltTracker);
