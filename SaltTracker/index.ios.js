@@ -31,8 +31,7 @@ class HomeScreen extends Component {
         </View>
         <Button
           onPress={() => navigate('ProductList', { dao: ProductDao })}
-          title="Voeg toe"
-          style={styles.button}
+          title="Voeg toe"          
         />        
       </View>
     );
@@ -41,8 +40,8 @@ class HomeScreen extends Component {
 
 const SaltTracker = StackNavigator({
   Home: { screen: HomeScreen },
-  ProductList: {screen: ProductList}
-  // Consumption: {screen: Consumption}  
+  ProductList: {screen: ProductList},
+  Consumption: {screen: Consumption}
 });
 
 const styles = StyleSheet.create({

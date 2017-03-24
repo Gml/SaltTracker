@@ -1,5 +1,14 @@
 import React, {Component} from "react";
-import {AppRegistry, View, ListView, Text, Image, StyleSheet} from "react-native";
+import {
+  AppRegistry, 
+  View, 
+  ListView, 
+  Text, 
+  Image, 
+  StyleSheet, 
+  Button,
+  TouchableHighlight
+} from "react-native";
 
 import styles from "./product-list.style"
 
@@ -15,17 +24,21 @@ export default class ProductList extends Component {
     };
   }
 
-  render() {    
+  render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.wrapper}>
         <ListView style={{alignSelf: 'stretch'}}
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
-            <View style={styles.row}>
-              <Image style={styles.image} source={{uri: rowData.imageUri}}/>
-              <Text style={styles.title}>{rowData.title}</Text>
-              <Text style={styles.salt}>{rowData.saltUnitsPer100Grams}</Text>
-            </View>
+            <TouchableHighlight onPress={() => navigate('Consumption', {image: rowData.imageUri})}>
+              <View style={styles.row} >
+                <Image style={styles.image} source={{uri: rowData.imageUri}}/>
+                <Text style={styles.title}>{rowData.title}</Text>
+                <Text style={styles.salt}>{rowData.saltUnitsPer100Grams}</Text>                  
+              </View>
+            </TouchableHighlight>
           }
         />
       </View>
